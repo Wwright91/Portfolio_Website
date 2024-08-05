@@ -1,28 +1,115 @@
 .Home {
-  display: grid;
-  justify-content: center;
-  margin: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  padding: 40px;
+  background-color: #f9f9f9;
 
-  img {
-    width: 400px;
-    height: 400px;
-    border-radius: 200px;
+  .Home__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  &__Buttons {
-    display: flex;
-    justify-content: space-around;
+  img {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
 
-    button {
-      border: none;
-      background: none;
-      cursor: pointer;
+  .Home__title {
+    font-size: 2.5rem;
+    color: #333;
+    margin: 0;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    letter-spacing: 3px;
+
+    span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: magic 1.5s forwards;
+      animation-delay: 0s;
     }
 
-    button:hover {
-      text-decoration: underline;
-      color: orange;
+    .first-name {
+      margin-right: 10px;
+    }
+
+    .last-name {
+      margin-left: 10px;
+    }
+
+    @keyframes magic {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      50% {
+        opacity: 0.5;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .Home__quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #555;
+    max-width: 600px;
+    margin: 20px 0;
+    padding: 5px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    position: relative;
+
+    &::before {
+      content: open-quote;
+      font-size: 3rem;
+      color: #007bff;
+      position: absolute;
+      top: -20px;
+      left: -20px;
+    }
+
+    &::after {
+      content: close-quote;
+      font-size: 3rem;
+      color: #007bff;
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+    }
+  }
+
+  .Home__Buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      background-color: #007bff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #0056b3;
+      }
     }
   }
 }
