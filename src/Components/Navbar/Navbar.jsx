@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-const hero = "../../../public/ww-logo.jpeg";
+const hero = "../../ww-logo.jpeg";
 
 import "./Navbar.scss";
 

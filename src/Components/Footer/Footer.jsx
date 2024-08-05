@@ -36,7 +36,7 @@ const Footer = () => {
           />
         </a>
         <a
-          href="your-resume-link"
+          href="https://docs.google.com/document/d/10yjZx1vyooFAKeHm8NuqF8snEEE41LRwTPyOB2b-K_8/edit?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="Footer__resume"
