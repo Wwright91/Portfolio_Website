@@ -36,3 +36,11 @@
     text-align: center;
   }
 }
+
+@media only screen and (max-width: 960px) {
+  .Skills {
+    &__item {
+      width: 50px;
+    }
+  }
+}
