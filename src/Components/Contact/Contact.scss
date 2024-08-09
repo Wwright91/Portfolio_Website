@@ -1,4 +1,4 @@
-$primary-color: #007BFF;
+$primary-color: #007bff;
 $hover-color: #0056b3;
 $background-color: #f9f9f9;
 $border-color: #ccc;
@@ -63,5 +63,34 @@ $label-color: #555;
         background-color: $hover-color;
       }
     }
+  }
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+.confirmation,
+.error {
+  padding: 30px;
+  text-align: center;
+
+  h1 {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+}
+
+.error {
+  background-color: #d7d7d7;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 5px;
+
+  h2 {
+    font-weight: 700;
   }
 }
