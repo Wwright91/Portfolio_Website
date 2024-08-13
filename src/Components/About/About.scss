@@ -6,15 +6,14 @@
   background-color: #f9f9f9;
 
   &__container {
-    max-width: 800px;
+    width: 100%;
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
 
-  &__title,
-  h2 {
+  &__title, h2 {
     margin-bottom: 20px;
     color: #333;
     text-align: center;
@@ -27,6 +26,7 @@
     color: #555;
     text-indent: 2em;
   }
+
   a {
     color: #007bff;
     text-decoration: none;
