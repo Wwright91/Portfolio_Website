@@ -1,11 +1,16 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./Contact.scss";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const form = useRef();
   const [submission, setSubmission] = useState(false);
   const [error, setError] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,7 +32,16 @@ const Contact = () => {
           console.error;
           setError(true);
         }
-      );
+      )
+      .then(() => {
+        setShowToast(true);
+        toast("Thank you! Your message has been sent successfully.", {
+          type: "success",
+        });
+        setTimeout(() => {
+          navigate("/");
+        }, 3000);
+      });
 
     e.target.reset();
   };
@@ -50,11 +64,13 @@ const Contact = () => {
           </div>
         </form>
       </div>
-      <div className={`confirmation ${submission ? "visible" : "hidden"}`}>
-        <h1>Thank you!</h1>
-        <h2>Your message has been sent successfully.</h2>
-        <p>I look forward to connecting with you soon!</p>
-      </div>
+      <ToastContainer
+        className={`confirmation ${submission ? "visible" : "hidden"}`}
+        position="top-center"
+        autoClose={2000}
+        theme="colored"
+        transition="Flip"
+      ></ToastContainer>
       <div className={`error ${error ? "visible" : "hidden"}`}>
         <h2>Error</h2>
         <p>Please try again.</p>

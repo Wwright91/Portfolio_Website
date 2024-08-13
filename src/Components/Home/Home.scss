@@ -98,7 +98,7 @@
     margin-top: 20px;
 
     button {
-      background-color: #f25f25;
+      background-color: orange;
       padding: 10px 20px;
       font-size: 1rem;
       border: none;
@@ -108,7 +108,7 @@
       transition: background-color 0.3s;
 
       &:hover {
-        background-color: #0056b3;
+        background-color: #f25f25;
       }
     }
   }
