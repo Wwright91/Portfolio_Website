@@ -60,6 +60,21 @@ const About = () => {
           </strong>
           . I also enjoy solving sudoku puzzles and reading in my spare time.
         </p>
+        <div className="About__articles">
+          <h2>Articles I've Written</h2>
+          <ul>
+            <li>
+              <a
+                href="https://medium.com/@wisdomwright-martin/keeping-it-toasty-how-i-used-toasts-to-fix-a-cohort-selection-bug-in-codetrack-c6c8402ad7c4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Keeping it Toasty: How I Used Toasts to Fix a Cohort Selection
+                Bug in CodeTrack
+              </a>
+            </li>
+          </ul>
+        </div>
         <h2>Coding Contributions This Year</h2>
         <GitHubCalendar
           style={{
