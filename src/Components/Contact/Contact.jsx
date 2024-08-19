@@ -48,7 +48,7 @@ const Contact = () => {
 
   return (
     <section>
-      <div className={`Contact ${submission ? "hidden" : "visible"}`}>
+      <div className={"Contact"}>
         <h2>Contact Me</h2>
         <form ref={form} onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label>

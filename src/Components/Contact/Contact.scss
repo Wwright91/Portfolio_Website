@@ -67,16 +67,12 @@ $label-color: #555;
   }
 }
 
-.visible {
-  // display: block;
-}
-
 .hidden {
   display: none;
 }
+
 .confirmation,
 .error {
-  // padding: 30px;
   text-align: center;
 
   h1 {
