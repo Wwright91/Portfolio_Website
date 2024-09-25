@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./Contact.scss";
-import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -10,7 +9,6 @@ const Contact = () => {
   const [submission, setSubmission] = useState(false);
   const [error, setError] = useState(false);
   const [showToast, setShowToast] = useState(false);
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,27 +18,19 @@ const Contact = () => {
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
         form.current,
-        {
-          publicKey: import.meta.env.VITE_PUBLIC_KEY,
-        }
+        { publicKey: import.meta.env.VITE_PUBLIC_KEY }
       )
       .then(
-        () => {
-          setSubmission(true);
-        },
+        () => setSubmission(true),
         (error) => {
-          console.error;
+          console.error(error);
           setError(true);
         }
       )
       .then(() => {
         setShowToast(true);
-        toast("Thank you! Your message has been sent successfully.", {
-          type: "success",
-        });
-        setTimeout(() => {
-          navigate("/");
-        }, 3000);
+        toast("Thank you! Your message has been sent successfully.", { type: "success" });
+        setTimeout(() => window.location.href = "/", 3000);
       });
 
     e.target.reset();
@@ -48,7 +38,7 @@ const Contact = () => {
 
   return (
     <section>
-      <div className={"Contact"}>
+      <div className="Contact" id="contact">
         <h2>Contact Me</h2>
         <form ref={form} onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label>
@@ -59,7 +49,7 @@ const Contact = () => {
           <input type="text" id="subject" name="subject" required />
           <label htmlFor="message">Message:</label>
           <textarea id="message" name="message" required></textarea>
-          <div>
+          <div className="button-wrapper">
             <button type="submit">Send</button>
           </div>
         </form>

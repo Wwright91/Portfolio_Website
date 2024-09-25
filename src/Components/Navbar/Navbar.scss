@@ -2,10 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px;
-  padding: 10px 0;
+  align-self: center;
+  margin: 30px auto;
+  padding: 10px;
   border-bottom: 2px solid #ddd;
   border-top: 2px solid #ddd;
+  
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  max-width: 830px;
 
   img {
     height: 70px;

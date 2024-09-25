@@ -23,6 +23,10 @@
     overflow: hidden;
     width: 300px;
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
 
     &:hover {
       transform: translateY(-5px);
@@ -37,8 +41,12 @@
   }
 
   &__info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 15px;
-    margin-top: 30px;
+    margin-top: 0;
   }
 
   &__title {
@@ -54,6 +62,9 @@
     max-height: 150px;
     overflow-y: auto;
     padding-right: 10px;
+    flex-grow: 1;
+    display: block;
+    margin-top: auto;
   }
 
   &__link {
@@ -62,7 +73,7 @@
     color: #007bff;
     text-decoration: none;
     transition: color 0.3s;
-
+    align-self: flex-end;
     &:hover {
       color: #0056b3;
     }

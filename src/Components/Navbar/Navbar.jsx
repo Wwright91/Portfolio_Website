@@ -5,18 +5,25 @@ const hero = "../../ww-logo.jpeg";
 import "./Navbar.scss";
 
 const Navbar = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="Navbar">
-      <NavLink to="/">
-        <img src={hero} alt="hero" />
-      </NavLink>
+      <img 
+        src={hero} 
+        alt="hero" 
+        onClick={scrollToTop} 
+        style={{ cursor: "pointer" }} 
+      />
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div className="container-fluid justify-content-center">
+          <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <NavLink to="/about">About</NavLink>
-              <NavLink to="/projects">Projects</NavLink>
-              <NavLink to="/contact">Contact</NavLink>
+              <a className="nav-link" href="#about">About</a>
+              <a className="nav-link" href="#projects">Projects</a>
+              <a className="nav-link" href="#contact">Contact</a>
             </div>
           </div>
         </div>

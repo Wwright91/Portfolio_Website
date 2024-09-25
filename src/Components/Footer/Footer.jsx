@@ -35,19 +35,42 @@ const Footer = () => {
             alt="Contact"
           />
         </a>
-        <a
-          href="https://docs.google.com/document/d/10yjZx1vyooFAKeHm8NuqF8snEEE41LRwTPyOB2b-K_8/edit?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="Footer__resume"
-        >
-          <img
-            src="https://img.icons8.com/?size=100&id=44091&format=png&color=000000"
-            alt="Resume"
-          />
-        </a>
+        <div className="Footer__resume">
+          <a
+            href="https://docs.google.com/document/d/10yjZx1vyooFAKeHm8NuqF8snEEE41LRwTPyOB2b-K_8/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://img.icons8.com/?size=100&id=44091&format=png&color=000000"
+              alt="Resume"
+              className="resume-icon"
+            />
+          </a>
+          <div className="resume-buttons">
+            <button
+              id="view-resume"
+              onClick={() =>
+                window.open(
+                  "https://docs.google.com/document/d/10yjZx1vyooFAKeHm8NuqF8snEEE41LRwTPyOB2b-K_8/edit?usp=sharing",
+                  "_blank"
+                )
+              }
+            >
+              View Resume
+            </button>
+            <a
+              href="https://docs.google.com/document/d/10yjZx1vyooFAKeHm8NuqF8snEEE41LRwTPyOB2b-K_8/export?format=pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Wisdom Wright Resume"
+              className="no-transform"
+            >
+              <button id="download-resume">Download Resume</button>
+            </a>
+          </div>
+        </div>
       </div>
-
       <div className="Footer__info">
         <p>
           &copy; {new Date().getFullYear()} Wisdom Wright. All rights reserved.

@@ -21,7 +21,7 @@ const About = () => {
   };
 
   return (
-    <section className="About">
+    <section className="About" id="about">
       <div className="About__container">
         <h2 className="About__title">About Me</h2>
         <p className="About__description">

@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 const hero = "../../wisdom-wright.jpeg";
 
 import "./Home.scss";
@@ -33,15 +32,15 @@ const Home = () => {
         Coding: where you can make a million mistakes and still be a hero.
       </blockquote>
       <div className="Home__Buttons">
-        <NavLink to="/about">
+        <a href="#about">
           <button>Learn More About Me</button>
-        </NavLink>
-        <NavLink to="/projects">
+        </a>
+        <a href="#projects">
           <button>See My Work</button>
-        </NavLink>
-        <NavLink to="/contact">
+        </a>
+        <a href="#contact">
           <button>Get In Touch</button>
-        </NavLink>
+        </a>
       </div>
     </div>
   );

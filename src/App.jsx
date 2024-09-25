@@ -1,31 +1,44 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import { useRef } from "react";
 import "./App.css";
 
 import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
-import FourOFour from "./Components/FourOFour/FourOFour";
 import Home from "./Components/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
 import Projects from "./Components/Projects/Projects";
 
 function App() {
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const scrollToSection = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div>
-      <Router>
-        <Navbar />
+    <div className="App">
+      <div className="app-container">
+        <Navbar
+          scrollToAbout={() => scrollToSection(aboutRef)}
+          scrollToProjects={() => scrollToSection(projectsRef)}
+          scrollToContact={() => scrollToSection(contactRef)}
+        />
         <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<FourOFour />} />
-          </Routes>
+          <Home />
+          <section ref={aboutRef}>
+            <About />
+          </section>
+          <section ref={projectsRef}>
+            <Projects />
+          </section>
+          <section ref={contactRef}>
+            <Contact />
+          </section>
         </main>
         <Footer />
-      </Router>
+      </div>
     </div>
   );
 }

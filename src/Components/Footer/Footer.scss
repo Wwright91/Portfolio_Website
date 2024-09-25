@@ -52,3 +52,36 @@
     text-align: center;
   }
 }
+
+.Footer__resume {
+  position: relative;
+  display: inline-block;
+}
+
+.resume-icon {
+  display: block;
+}
+
+.resume-buttons {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  z-index: 10;
+}
+
+.Footer__resume:hover .resume-buttons {
+  display: block;
+}
+
+.Footer__resume {
+  position: relative;
+  display: inline-block;
+}
+
+.no-transform {
+  transform: none !important;
+}
